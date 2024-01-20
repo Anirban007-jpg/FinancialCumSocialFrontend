@@ -42,47 +42,35 @@ export default function Home() {
           </p>
           <div className="flex-col md:flex-row hidden md:flex gap-5">
           <Link
-              href="/my-skills"
+              href="/about"
               className="rounded-[20px] group relative bg-blue-500 hover:bg-blue-400 px-5 py-3 text-lg text-white max-w-[200px]"
             >
               Learn more
             </Link>
             <Link
-              href="/my-projects"
+              href="/contact"
               className="rounded-[20px] group relative bg-trasparent px-5 border border-white py-3 text-lg text-white max-w-[200px]"
             >
               <div className="absolute rounded-[20px] z-[1] bg-white inset-0 opacity-0 group-hover:opacity-20" />
-              My projects
+              Contact Us
             </Link>
-            <Link
-              href="/contact-me"
-              className="rounded-[20px] group relative bg-trasparent border border-white px-5 py-3 text-lg text-white max-w-[200px]"
-            >
-              <div className="absolute rounded-[20px] z-[1] bg-white inset-0 opacity-0 group-hover:opacity-20" />
-              Contact me
-            </Link>
+           
           </div>
         </div>
       </div>
       <div className="absolute flex bottom-10 z-[20] right-5 flex-col md:hidden gap-5">
         <Link
-          href="/my-skills"
+          href="/about"
           className="rounded-[20px] group bg-blue-500 px-5 py-3 text-lg text-white max-w-[200px]"
         >
           Learn more
         </Link>
 
         <Link
-          href="/my-projects"
+          href="/contact"
           className="rounded-[20px] group bg-trasparent border border-white px-5 py-3 text-lg text-white max-w-[200px]"
         >
-          My projects
-        </Link>
-        <Link
-          href="/contact-me"
-          className="rounded-[20px] group bg-trasparent border border-white px-5 py-3 text-lg text-white max-w-[200px]"
-        >
-          Contact me
+          Contact Us
         </Link>
       </div>
       <div className="absolute bottom-0 right-0 z-[10]">

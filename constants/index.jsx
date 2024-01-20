@@ -1,5 +1,6 @@
 import { RxHome, RxPerson, RxDashboard, RxClipboard,RxAvatar  } from "react-icons/rx";
 import { FaRegistered } from "react-icons/fa6";
+import { GiSkills } from "react-icons/gi";
 
 export const SkillData = [
   {
@@ -93,24 +94,9 @@ export const Socials = [
 ];
 export const Projects = [
   {
-    title: "Modern Nextjs Website",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    title: "SEO Blog Nextjs Website",
+    text: "Website created for writing blogs with Role based Authentication",
     src: "/NextWebsite.png",
-  },
-  {
-    title: "Space Themed Website",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-    src: "/SpaceWebsite.png",
-  },
-  {
-    title: "Modern Nextjs Portfolio",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-    src: "/WebPortfolio.png",
-  },
-  {
-    title: "Matrix themed Website",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-    src: "/Matrix.png",
   },
 ];
 
@@ -134,5 +120,10 @@ export const NavLinks = [
     name: "/register",
     icon: FaRegistered,
     link: "/register",
+  },
+  {
+    name: "/my-skills",
+    icon: GiSkills,
+    link: "/my-skills",
   },
 ];
