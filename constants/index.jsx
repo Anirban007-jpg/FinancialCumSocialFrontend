@@ -34,19 +34,6 @@ export const SkillData = [
     height: 80,
   },
   {
-    name: "Redux",
-    Image: "/redux.png",
-    width: 80,
-    height: 80,
-  },
-
-  {
-    name: "TypeScript",
-    Image: "/ts.png",
-    width: 80,
-    height: 80,
-  },
-  {
     name: "Next js 13",
     Image: "/next.png",
     width: 80,
