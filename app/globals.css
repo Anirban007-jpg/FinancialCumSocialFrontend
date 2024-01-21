@@ -5,3 +5,8 @@
 body {
   overflow: hidden;
 }
+
+.content {
+  display : absolute;
+  border:  2px ;
+}
