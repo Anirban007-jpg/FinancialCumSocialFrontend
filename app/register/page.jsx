@@ -1,4 +1,6 @@
 import Register from '@/Components/Register';
+// import TransitionRegister from '@/Components/TransitionRegister';
+// import TransitionForRegistration from '@/Components/TransitionForRegistration';
 import React from 'react';
 
 export const metadata = {
