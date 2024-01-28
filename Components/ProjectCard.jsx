@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from 'react'
 import {motion} from 'framer-motion'
+import Image from 'next/image'
+import Link from 'next/link'
 
 // export interface props {
 //     image: string;
@@ -8,49 +10,24 @@ import {motion} from 'framer-motion'
 //     text: string;
 // }
 
-const ProjectCard = ({ title=string, text=string, image=string}) => {
+const ProjectCard = ({ title, text, image,link}) => {
 
-    const [isFlipped, setIsFlipped] = useState(false)
-    const [isAnimating, setIsAnimating] = useState(false)
-
-    function handleFlip() {
-        if(!isAnimating) {
-            setIsFlipped(!isFlipped)
-            setIsAnimating(true)
-        }
-    }
+  
   return (
-    <div
-    onClick={handleFlip}
-    className='w-[450px] h-[280px] rounded-md cursor-pointer'>
-        <motion.div
-        className='flip-card-inner w-full h-full'
-        initial={false}
-        animate={{rotateY: isFlipped ? 180 : 360}}
-        transition={{ duration: 0.6, animationDirection: 'normal'}}
-        onAnimationComplete={() => setIsAnimating(false)}
-        >
-            <div
-            style={{backgroundImage: `url(${image})`}}
-            className='w-full h-full group relative flip-card-front bg-cover bg-center text-white rounded-lg p-4'>
-                    <div  className='absolute inset-0 w-full h-full rounded-md bg-black opacity-0 group-hover:opacity-40'/>
-                    <div className='absolute inset-0 w-full h-full text-[20px] pb-10 hidden group-hover:flex items-center z-[20] justify-center'>
-                    Learn more &gt;
-                    </div>
-            </div>
-            <div
-            style={{backgroundImage: `url(${image})`}}
-            className='w-full h-full group relative flip-card-back bg-cover bg-center text-white rounded-lg p-4'>
-                    <div  className='absolute inset-0 w-full h-full rounded-md bg-black opacity-50 z-[-1]'/>
-                  <div className='flex flex-col gap-20 py-3 z-[30]'>
-                    <h1 className='text-whote text-2xl font-semibold'>{title}</h1>
-                    <p className='text-gray-200 text-[20px]'>
-                        {text}
-                    </p>
-                  </div>
-            </div>
-        </motion.div>
+    <div className="p-10 ">  
+    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+      <img className="w-full" src={image} alt="Mountain" />
+      <div className="px-6 py-4">
+        <div className="text-blue-200 font-bold text-xl mb-2"><Link href={link} target='_blank'>{title}</Link></div>
+        <p className="text-green-200 font-semibold text-base">
+          {text}
+        </p>
+      </div>
+      <div className="px-6 pt-4 pb-2">
+        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#WebDevelopment</span>
+      </div>
     </div>
+  </div>
   )
 }
 

@@ -84,7 +84,8 @@ export const Projects = [
     title: "SEO Blog Nextjs Website",
     text: "Website created for writing blogs with Role based Authentication",
     src: "/NextWebsite.png",
-  },
+    link: "https://seoblog-three.vercel.app/"
+  }
 ];
 
 export const NavLinks = [

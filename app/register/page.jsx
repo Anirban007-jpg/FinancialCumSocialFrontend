@@ -10,9 +10,7 @@ export const metadata = {
 
 const page = () => {
     return (  
-        <>
-            <Register/>
-        </>
+        <Register/>
     );
 }
  
