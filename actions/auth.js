@@ -49,6 +49,21 @@ export const signup = company => {
         .catch(err => console.log(err));
 };
 
+export const signin = company => {
+    return fetch(`${process.env.DOMAIN}/login`, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(company)
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 // set cookie
 export const setCookie = (key, value) => {
     if (process.browser) {
@@ -88,7 +103,7 @@ export const removeLocalStorage = key => {
 // autheticate user by pass data to cookie and localstorage
 export const authenticate = (data, next) => {
     setCookie('token', data.token);
-    setLocalStorage('user', data.user);
+    setLocalStorage('company', data.company);
     next();
 };
 
@@ -96,8 +111,8 @@ export const isAuth = () => {
     if (process.browser) {
         const cookieChecked = getCookie('token');
         if (cookieChecked) {
-            if (localStorage.getItem('user')) {
-                return JSON.parse(localStorage.getItem('user'));
+            if (localStorage.getItem('company')) {
+                return JSON.parse(localStorage.getItem('company'));
             } else {
                 return false;
             }

@@ -1,4 +1,6 @@
 import MySkills from '@/Components/MySkills';
+import Navbar from '@/Components/Navbar';
+import Navigation from '@/Components/Navigation';
 import React from 'react';
 
 export const metadata = {
@@ -8,7 +10,12 @@ export const metadata = {
 
 const page = () => {
     return (  
+        <>
+        <Navbar/>
         <MySkills/>
+        <Navigation/> 
+        </>
+        
     );
 }
 

@@ -35,7 +35,7 @@ const Register = () => {
     const {Company_Name,TAN_No,registered_company_email,role,company_registered_address,registered_company_mobile_no,password,confirmedPassword,error,message,loading} = values;
     
     useEffect(() => {
-      isAuth() && router.push('/')
+      isAuth() && isAuth().role === 'Company' ? router.push('/Company/Dashboard') : router.push('/Admin/Dashboard')
     }, [])
 
     const handleChange = (name) => e => {
@@ -119,6 +119,7 @@ const Register = () => {
 
     return (
         <div className="min-h-screen py-40" style={{backgroundImage: "linear-gradient(115deg, #9F7AEA, #FEE2FE)"}}>  
+        {showLoading()}
         <div style={{marginTop : '-80px',marginBottom : '25px'}}>
           {showError()} 
           {showMessage()} 

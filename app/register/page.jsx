@@ -1,3 +1,5 @@
+import Navbar from '@/Components/Navbar';
+import Navigation from '@/Components/Navigation';
 import Register from '@/Components/Register';
 // import TransitionRegister from '@/Components/TransitionRegister';
 // import TransitionForRegistration from '@/Components/TransitionForRegistration';
@@ -10,7 +12,11 @@ export const metadata = {
 
 const page = () => {
     return (  
+        <>
+        <Navbar/>
         <Register/>
+        <Navigation/>
+        </>
     );
 }
  

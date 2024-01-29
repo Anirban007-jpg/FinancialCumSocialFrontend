@@ -1,5 +1,7 @@
 // "use client"
 
+import Navbar from '@/Components/Navbar';
+import Navigation from '@/Components/Navigation';
 import ProjectCard from '@/components/ProjectCard'
 import { Projects } from '@/constants'
 import React from 'react'
@@ -9,6 +11,8 @@ export const metadata = {
 };
 const page = () => {
   return (
+    <>
+    <Navbar/>
     <div
     style={{backgroundImage: "url(/mountains.jpg)"}}
      className='w-screen h-screen flex items-center justify-center bg-center bg-cover'>
@@ -24,6 +28,8 @@ const page = () => {
         ))}
       </div>
     </div>
+    <Navigation/>
+    </>
   )
 }
 

@@ -1,5 +1,7 @@
 'use client'
 
+import Navbar from "@/Components/Navbar";
+import Navigation from "@/Components/Navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
@@ -21,6 +23,8 @@ export default function Home() {
   })
 
   return (
+    <>
+    <Navbar/>
     <main className="w-screen h-screen relative">
       <div className="flex items-center w-full h-full bg-cover bg-center" style={{backgroundImage: "url(/main-bg.webp"}}>
         <div className="pl-20 md:pl-40 pb-56 md:pb-20 flex flex-col gap-5 z-[10] max-w-[750px]">
@@ -82,5 +86,7 @@ export default function Home() {
       </div>
       <Image src="/stars.png" alt="stars" height={300} width={300} className="absolute top-10 left-0 z-[10]"/>
     </main>
+    <Navigation/>
+    </>
   );
 }

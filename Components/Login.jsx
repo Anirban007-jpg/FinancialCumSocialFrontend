@@ -1,20 +1,64 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FaGoogle } from 'react-icons/fa6';
 import Heading from '@/Components/Heading';
 // import Login from '@/Components/Heading';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { authenticate, isAuth, signin } from '@/actions/auth';
 
 const Login = () => {
+    const [values,setValues] = useState({
+        TAN_No: '',
+        password: '',
+        loading: false,
+        error: ''
+    })
+
+    const {TAN_No,loading,error,password} = values;
+
+    const router = useRouter();
+
+    useEffect(() => {
+        isAuth() && isAuth().role === 'Company' ? router.push('/Company/Dashboard') : router.push('/Admin/Dashboard')
+      }, [])
+
+    const handleChange = (name) => e => {
+        setValues({...values, error: '', [name]: e.target.value});
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setValues({...values, loading: true, error:''});
+        const company = {TAN_No,password};
+        signin(company).then(data => {
+            if (data.error){
+                setValues({...values, error: data.error, loading:false});
+            }
+            else{
+                authenticate(data, ()=>{
+                    if (isAuth() && isAuth().role === "Company"){
+                        router.push('/Company/Dashboard')
+                    }else if (isAuth() && isAuth().role === "Admin"){
+                        router.push('/Admin/Dashboard')
+                    } 
+                })
+            }
+        })
+    }
+
+    const showError = () => error ? <div className="alert alert-danger">{error}</div> : '';
+    
     return (
         <>
                 <div className='flex flex-col gap-x-0 gap-y-7 w-[300px]'>
                     {/* Heading */}
                         <Heading/>
                     {/* Login Form */}
-                        <form className='flex mb-2 ml-5 mr-5 flex-col gap-y-3'>
-                            <input type='text' placeholder='Company TAN' className='text-white text-sm p-2 rounded-2xl bg-slate-200 outline-none tracking-widest' />
-                            <input type='password' placeholder='Password' className='text-white text-sm p-2 rounded-2xl bg-slate-200 outline-none tracking-widest mt-4'/>
+                        <form className='flex mb-2 ml-5 mr-5 flex-col gap-y-3' onSubmit={handleSubmit} noValidate>
+                            <input type='text' value={TAN_No} onChange={handleChange('TAN_No')} placeholder='Company TAN' className='text-black font-bold text-sm p-2 rounded-2xl bg-slate-200 outline-none tracking-widest' />
+                            <input type='password' value={password} onChange={handleChange('password')} placeholder='Password' className='text-black font-bold text-sm p-2 rounded-2xl bg-slate-200 outline-none tracking-widest mt-4'/>
                             <input type='submit' value='LOGIN' className='bg-slate-700 text-white tracking-wider p-2 rounded-2xl font bold transition-colors hover:bg-purple-800 cursor-pointer' />
                         </form>
                     {/* End of Login Form */}   
