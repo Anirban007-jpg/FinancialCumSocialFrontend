@@ -35,9 +35,13 @@ const Register = () => {
     const {Company_Name,TAN_No,registered_company_email,role,company_registered_address,registered_company_mobile_no,password,confirmedPassword,error,message,loading} = values;
     
     useEffect(() => {
-      isAuth() && isAuth().role === 'Company' ? router.push('/Company/Dashboard') : router.push('/Admin/Dashboard')
+      if (isAuth() && isAuth().role === 'Company'){
+       router.push('/Company/Dashboard')
+      }else  if (isAuth() && isAuth().role === 'Admin'){
+          router.push('/Admin/Dashboard')
+      }
     }, [])
-
+    
     const handleChange = (name) => e => {
            setValues({...values, error: '', [name]: e.target.value});
     }

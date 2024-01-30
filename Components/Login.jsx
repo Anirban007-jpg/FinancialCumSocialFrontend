@@ -21,7 +21,11 @@ const Login = () => {
     const router = useRouter();
 
     useEffect(() => {
-        isAuth() && isAuth().role === 'Company' ? router.push('/Company/Dashboard') : router.push('/Admin/Dashboard')
+        if (isAuth() && isAuth().role === 'Company'){
+         router.push('/Company/Dashboard')
+        }else  if (isAuth() && isAuth().role === 'Admin'){
+            router.push('/Admin/Dashboard')
+        }
       }, [])
 
     const handleChange = (name) => e => {
