@@ -76,7 +76,7 @@ const Login = () => {
                     </button>
                     {/* End of Google Button */}
          
-                    <Link href="#" className='text-xs text-blue-400 font-semibold underline justify-center text-center'>Forgot my Password?</Link>
+                    <Link href="/forgotPassword" className='text-xs text-blue-400 font-semibold underline justify-center text-center'>Forgot my Password?</Link>
                   
                 </div>     
                 <div className='relative w-[600px] grid place-items-center'>
