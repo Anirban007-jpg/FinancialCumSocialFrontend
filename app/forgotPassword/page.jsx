@@ -15,7 +15,9 @@ const page = () => {
             <Navbar/>
                 <main className="w-screen h-screen relative">
                     <div className="flex items-center w-full h-full bg-cover bg-center" style={{backgroundImage: "url(/main-bg.webp"}}>
+                        <div className="pl-20 md:pl-40 pb-56 md:pb-20 flex flex-col gap-5 z-[10] max-w-[750px]">
                             <ForgotPasswordForm/>
+                        </div>
                     </div>
                     <div className="absolute bottom-0 z-[5] w-full h-auto">
                         <Image src="/trees.webp" alt="trees" height={2000} width={2000} className="w-full h-full" />

@@ -132,3 +132,18 @@ export const updateUser = (user, next) => {
         }
     }
 };
+
+export const forgotPassword = company_registered_email => {
+    return fetch(`${process.env.DOMAIN}/forgot-password`, {
+        method: 'PUT',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(company_registered_email)
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};

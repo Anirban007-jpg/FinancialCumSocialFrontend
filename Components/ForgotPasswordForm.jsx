@@ -1,5 +1,5 @@
 'use client'
-import { isAuth } from '@/actions/auth';
+import { forgotPassword, isAuth } from '@/actions/auth';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import HeadingForForgotPasswordForm from './HeadingForForgotPasswordForm';
@@ -7,16 +7,16 @@ import HeadingForForgotPasswordForm from './HeadingForForgotPasswordForm';
 
 const ForgotPasswordForm = () => {
 
-    const router = useRouter();
-
     const [values,setValues] = useState({
-      registered_company_email: '',
-      loading: false,
+      registered_company_email: "",
+      loading: false,   
       error: '',
       message: ''
     });
 
     const {registered_company_email,error,message,loading} = values;
+
+    const router = useRouter();
     
     useEffect(() => {
       if (isAuth() && isAuth().role === 'Company'){
@@ -29,11 +29,19 @@ const ForgotPasswordForm = () => {
     
     const handleChange = (name) => e => {
         setValues({...values, error: '', [name]: e.target.value});
-     }
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setValues({...values, loading: true, error:''});
+        // console.log(...values)
+        forgotPassword({ registered_company_email }).then(data => {
+            if (data.error) {
+                setValues({ ...values, error: data.error });
+            } else {
+                setValues({ ...values, message: data.message, registered_company_email: ''});
+            }
+        });
     }
 
 
@@ -79,24 +87,24 @@ const ForgotPasswordForm = () => {
 </div> : '';
     return ( 
         <>
-            <div className='itemns-center mt-[10px] mb-[10px]'>
+            <div className='items-center mb-[-50px] w-full '>
                 {showLoading()}
-                {showMessage()}
                 {showError()}
+                {showMessage()}
             </div>
-             <div className='flex flex-col items-center mt-[-100px] gap-x-0 gap-y-0 w-[2050px]'>
+             <div className='flex flex-col mt-[20px] gap-x-0 gap-y-0 w-full'>
                     {/* Heading */}
                         <HeadingForForgotPasswordForm />
                     {/* Login Form */}
-                        <form className='flex items-center mb-2 ml-5 mr-5 flex-col gap-y-3 w-[550px]' onSubmit={handleSubmit} noValidate>
-                            <input type='text' value={registered_company_email} onChange={handleChange('registered_company_email')} placeholder='Provide Company email' className='text-black font-bold text-sm p-2 rounded-2xl w-[550px] bg-slate-200 outline-none tracking-widest' />
-                            <input type='submit' value='LOGIN' className='bg-blue-700 w-[200px] text-white tracking-wider p-2 rounded-2xl font bold transition-colors hover:bg-purple-800 cursor-pointer' />
+                        <form className='flex items-center mb-2 ml-5 mr-5 flex-col gap-y-3 w-full' onSubmit={handleSubmit} noValidate>
+                        <div className="relative">
+                            <input value={registered_company_email} type="text" onChange={handleChange('registered_company_email')} className="block mb-[5px] rounded-t-lg px-2.5 pb-2.5 pt-5 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none w-[550px] dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " /> 
+                            <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-purple-950 peer-focus:dark:text-purple-950 peer-focus:font-bold peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 before:content-[' '] after:content-['*'] after:text-red-500 after:ml-1 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Company Email</label>
+                        </div>
+                            <input type='submit' value='Send Reset Link' className='bg-blue-700 w-[200px] text-white tracking-wider p-2 rounded-2xl font bold transition-colors hover:bg-purple-800 cursor-pointer'  />
                         </form>                    {/* End of Login Form */}   
-                </div>     
-              
-        </>   
-
-        
+                </div>
+        </>
      );
 }
  
