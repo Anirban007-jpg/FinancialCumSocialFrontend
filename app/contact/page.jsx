@@ -1,3 +1,5 @@
+import Navbar from "@/Components/Navbar";
+import Navigation from "@/Components/Navigation";
 import ContactForm from "@/components/ContactForm";
 import React from "react";
 
@@ -19,6 +21,8 @@ export const metadata = {
 
 const page = () => {
   return (
+    <>
+    <Navbar/>
     <div
       style={{ backgroundImage: "url(bg-3.jpg)" }}
       className="w-screen h-screen bg-cover bg-center flex items-center justify-center"
@@ -32,6 +36,8 @@ const page = () => {
         </div>
       </div>
     </div>
+    <Navigation/>
+    </>
   );
 };
 

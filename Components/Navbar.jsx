@@ -1,5 +1,6 @@
-import { Socials } from '@/constants';
+import { InstSocial, Socials } from '@/constants';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
@@ -11,8 +12,14 @@ const Navbar = () => {
             </div>
             <div className='flex flex-row gap-5 mb-2'>
                 {Socials.map((social) => (
-                    <Image key={social.name} src={social.src} alt={social.name} width={20} height={20} />
+                    <Link href="https://www.facebook.com/profile.php?id=61556025035452" target='_blank'>
+                        <Image key={social.name} src={social.src} alt={social.name} width={20} height={20} />
+                    </Link>
+                    
                 ))}
+                <Link href="https://www.instagram.com/financia2926/" target='_blank'>
+                    <Image src='/instagram.svg' alt='instagram' width={20} height={20} />
+                </Link>
             </div>
         </div>
     );

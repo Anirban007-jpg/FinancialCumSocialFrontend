@@ -67,18 +67,18 @@ export const SkillData = [
 
 export const Socials = [
   {
-    name: "Discord",
-    src: "/instagram.svg",
-  },
-  {
     name: "Facebook",
     src: "/facebook.svg",
   },
+];
+
+export const InstSocial = [
   {
     name: "Instagram",
     src: "/discord.svg",
-  },
+  }
 ];
+
 export const Projects = [
   {
     title: "SEO Blog Nextjs Website",
