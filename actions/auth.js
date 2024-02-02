@@ -147,3 +147,18 @@ export const forgotPassword = company_registered_email => {
         })
         .catch(err => console.log(err));
 };
+
+export const resetPassword = resetInfo => {
+    return fetch(`${process.env.DOMAIN}/reset-password`, {
+        method: 'PUT',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(resetInfo)
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
