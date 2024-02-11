@@ -1,6 +1,7 @@
 import { RxHome, RxPerson, RxDashboard, RxClipboard,RxAvatar  } from "react-icons/rx";
-import { FaRegistered } from "react-icons/fa6";
+import { FaBookJournalWhills, FaRegistered } from "react-icons/fa6";
 import { GiSkills } from "react-icons/gi";
+import { FaHome } from "react-icons/fa";
 
 export const SkillData = [
   {
@@ -72,12 +73,6 @@ export const Socials = [
   },
 ];
 
-export const InstSocial = [
-  {
-    name: "Instagram",
-    src: "/discord.svg",
-  }
-];
 
 export const Projects = [
   {

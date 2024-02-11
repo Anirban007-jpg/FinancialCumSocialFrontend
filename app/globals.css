@@ -2,6 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
+/*========== GOOGLE FONTS ==========*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*========== VARIABLES CSS ==========*/
+:root {
+  --header-height: 3.5 rem;
+  --body-height : 0px;
+  --nav-width: 219px;
+
+  /*========== Colors ==========*/
+  --first-color: #6923D0;
+  --first-color-light: #F4F0FA;
+  --title-color: #19181B;
+  --text-color: #58555E;
+  --text-color-light: #A5A1AA;
+  --body-color: #F9F6FD;
+  --container-color: #FFFFFF;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --normal-font-size: .938rem;
+  --small-font-size: .75rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*========== BASE ==========*/
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+.header {
+  position : flex;
+  top:0;
+  left:0;
+  width: 100%;
+  background-color: var(--container-color);
+  box-shadow: 0 1px 0 rgba(22,8,43,.1);
+  padding: 0 1rem;
+  z-index: var(--z-fixed);
+}
+
+.header_container {
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  justify-content: space-between;
+}
+
+.header_img{
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin-bottom: 2px;
+}
+
+.header_logo{
+  color:  var(--title-color);
+  font-weight: bold;
+  display: none;
+}
+
+.header_search{
+  display: flex;
+  padding: .40rem .75rem;
+  background-color: var(--first-color-light);
+  border-radius: .25rem;
+  margin-bottom: 6px;
+}
+
+.header_input{
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--first-color-light);
+}
+
+.header_input::placeholder{
+  font-family: var(--body-font);
+  color: var(--text-color);
+  font: bold;
+}
+
+.header_toggle{
+  font-size: 1.2rem;
+  margin-top: -6px;
+  cursor: pointer;
+}
+
+
+
 body {
   overflow: hidden;
 }
@@ -15,4 +120,121 @@ body {
 .card.in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(216, 216, 216);
+  border-radius: 40px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* color-picker style  */
+
+.sidebar{
+  background: rgb(0,7,61);
+  color: white;
+  height: 100vh;
+  overflow-y: auto;
+}        
+
+.routes {
+  color: white
+}
+
+
+.top_section{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+  font-weight: bold;
+}
+
+.logo {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin:10px 0;
+  height:30px;
+  margin-top : 15px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.search_input{
+  border: none;
+  margin-left: 10px;
+  border-radius: 5px;
+  background:rgb(238,238,238);
+}
+
+.links {
+  display: flex;
+  color: white;
+  gap: 10px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  transition: 0.2s cubic-bezier(0.6,-0.28,0.735,0.045);
+}
+
+.link_text{
+  white-space : nowrap;
+  font-size: 15px;
+}
+
+.active{
+ border-right: 4px solid white;
+ background: rgb(45,51,89);
+ font-weight: bold;
+ color: red;
+}
+
+.links:hover {
+  border-right: 4px solid transparent;
+  transition: 0.2s cubic-bezier(0.6,-0.28,0.735,0.045);
+  background: rgb(45,51,89);
+}
+
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  gap: 15px;
+  padding: 5px 10px;
+  margin-top: 8px;
+  transition: 0.2s cubic-bezier(0.6,-0.28,0.735,0.045);
+}
+ 
+.menu-item {
+  display: flex;
+  gap: 10px;
+}
+
+.menu_container{
+  display: flex;
+  flex-direction: column;
+}
+
+.linkforsub{
+  padding-left: 5px;
+  border-bottom: #fff 0.5px solid;  
+  display: flex;
+  color: white;
+  gap: 10px;
+  padding: 5px 10px;
+  margin-top: 6px;
+  transition: 0.2s cubic-bezier(0.6,-0.28,0.735,0.045);
 }
