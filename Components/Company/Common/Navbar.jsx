@@ -1,12 +1,15 @@
 'use client'
-import { isAuth } from '@/actions/auth';
+import { getCookie, isAuth, signout } from '@/actions/auth';
+import { useRouter } from 'next/navigation';
 // import classNames from 'classnames';
 // import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { FaEnvelope, FaRegBell } from 'react-icons/fa6';
 
+
 const Navbar = () => {
+    const router = useRouter();
     const [Initials, setInitials]  = useState('');
     const [Company, setCompany]  = useState('');
     const [open,setOpen] = useState(false);
@@ -15,8 +18,10 @@ const Navbar = () => {
         setOpen(!open);
     }
     useEffect(() => {
+        if (getCookie('token') !== null && isAuth()){
         setInitials(isAuth().Initials);
         setCompany(isAuth().Company_Name);
+        }
     },[])
 
     return (  
@@ -43,7 +48,7 @@ const Navbar = () => {
                 {
                     open && 
                     <div className='bg-gray-300 border h-[120px] w-[150px] absolute bottom-[-130px] z-20 right-0 pt-[15px] pl-[15px] space-y-[10px]'>
-                        <p className='cursor-pointer hover:text-[blue] font-semibold'>Logout</p>
+                        <p className='cursor-pointer hover:text-[blue] font-semibold' onClick={() => signout(() => router.push('/'))}>Logout</p>
                         <p className='cursor-pointer hover:text-[blue] font-semibold'>Logout</p>
                         <p className='cursor-pointer hover:text-[blue] font-semibold'>Logout</p>
                     </div>

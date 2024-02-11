@@ -89,6 +89,22 @@ export const getCookie = key => {
         return false;
     }
 };
+
+export const signout = next => {
+    removeCookie('token');
+    removeLocalStorage('company');
+    next();
+
+    return fetch(`${process.env.DOMAIN}/signout`, {
+        method: 'GET'
+    })
+        .then(response => {
+            console.log('signout success');
+        })
+        .catch(err => console.log(err));
+};
+
+
 // localstorage
 export const setLocalStorage = (key, value) => {
     if (process.browser) {
