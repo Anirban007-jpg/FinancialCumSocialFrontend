@@ -1,14 +1,13 @@
 'use client'
 // import Navbar from '@/Components/Navbar';
 import React, { useEffect } from 'react';
-import Navbar from './Navbar';
-import Main from '../dashboard/Main';
 import { getCookie, isAuth, removeLocalStorage } from '@/actions/auth';
 import { useRouter } from 'next/navigation';
-// import { useRouter } from 'next/router';
+import Main from './Main';
+import Navbar from '../Common/Navbar';
 
-const Dashboardview = () => {
-
+const LedgerView = () => {
+    
     const router = useRouter();
 
     useEffect(() => {
@@ -33,6 +32,7 @@ const Dashboardview = () => {
       </>
       
     );
+    
 }
  
-export default Dashboardview;
+export default LedgerView;

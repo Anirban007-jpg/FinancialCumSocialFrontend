@@ -55,7 +55,7 @@ const MenuOptionswithoutHeading = [
         icon: <FaBookJournalWhills size={20} />,
         submenu: [
           {
-            path: "/Company/Ledger_Creation",
+            path: "/Company/Ledgers/Ledger_Create",
             title: "Create Ledger",
             icon :  <SiHyperledger size={15} />  
           },
@@ -72,7 +72,7 @@ const MenuOptionswithoutHeading = [
     icon: <FaBookJournalWhills size={20} />,
     submenu: [
       {
-        path: "/Company/Journal_Entry_Creation",
+        path: "/Company/Journal/Journal_Entry_Creation",
         title: "Create Journal Entry",
         icon :  <SiHyperledger size={15} />  
       },
@@ -127,7 +127,7 @@ const Sidebar = ({children}) => {
   return (
     <>  
     <div>
-      <motion.div animate={{width: "200px", transition:{
+      <motion.div animate={{width: "260px", transition:{
         duration: 0.5,
         type: "spring",
         damping: 11

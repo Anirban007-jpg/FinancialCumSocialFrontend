@@ -73,7 +73,7 @@ const SidebarMenu = ({showAnimation, route, isOpen, setIsOpen }) => {
             </AnimatePresence>
           </div>
           <motion.div animate={isMenuOpen ? {rotate:-90} : {rotate: 0}}>
-            <FaAngleDown />
+            <FaAngleDown className='cursor-pointer'/>
           </motion.div>
        </div>
        <AnimatePresence>

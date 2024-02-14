@@ -25,7 +25,7 @@ const Navbar = () => {
     },[])
 
     return (  
-        <div className='bg-gray-100 flex items-center justify-between h-[70px] shadow-lg px-[25px]'>
+        <div className='bg-gray-100 flex items-center justify-between h-[70px] shadow-lg px-[20px]'>
         <div className='flex item-center rounded-[5px]'>
             <input type='text' className='bg-[#F8F9FC] h-[40px] outline-none pl-[13px] w-[350px] rounded-[5px] mt-[2px] placeholder:text-[14px] leading-[20px] font-normal' placeholder='Search for...'></input>
             <div className='bg-[#4E73DF] h-[40px] px-[14px] flex items-center justify-center cursor-pointer rounded-tr-[5px] rounded-br-[5px]'>

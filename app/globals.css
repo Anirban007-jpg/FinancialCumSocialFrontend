@@ -108,7 +108,8 @@
 
 
 body {
-  overflow: hidden;
+  overflow: scroll;
+  scroll-behaviour: smooth;
 }
 
 .content {
@@ -141,8 +142,8 @@ body {
 .sidebar{
   background: rgb(0,7,61);
   color: white;
-  height: 100vh;
-  overflow-y: auto;
+  height: 140vh;
+  overflow-y: hidden;
 }        
 
 .routes {
@@ -237,4 +238,45 @@ body {
   padding: 5px 10px;
   margin-top: 6px;
   transition: 0.2s cubic-bezier(0.6,-0.28,0.735,0.045);
+}
+
+.box {
+  position: relative;
+  width: 75%;
+  height: 420px;
+  border-radius: 8px;
+}
+
+
+
+@keyframes animate{
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(360deg);
+  }
+}
+
+.headingforLedg {
+  text-decoration: underline;
+}
+
+.container_form{
+  position: absolute;
+  inset: 4px;
+  background: #222;
+  padding: 50px 40px;
+  border-radius: 8px;
+  z-index: 2;
+  flex-direction: column;
+}
+
+.container_box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
