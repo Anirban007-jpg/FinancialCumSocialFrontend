@@ -60,10 +60,15 @@ const LedgerForm = () => {
         <div className='container_box'>
             <div className='box sm:h-[480px] sm:position-relative sm:w-[75%] sm:border-r-[8px]'>
                 <form className='container_form mx-auto animate-customSlideIn sm:mt-[-80px] md:mt-[-120px] mt-[-150px]' onSubmit={handleFormsubmitData} noValidate>
-                    <p className='mb-6 mt-[-10px] sm:mb-6 sm:mt-[-10px] text-center text-green-800 font-bold'>
+                    {success && <div className='mb-6 mt-[-10px] flex flex-row w-[75%] justify-center items-center ml-[40px] bg-green-200 sm:mb-6 sm:mt-[-10px] text-center text-green-800 font-bold'>
                        {success} 
-                    </p> 
-                    <h1 className='text-bold text-center mt-[-20px] mb-[15px] headingforLedg text-transparent bg-clip-text bg-gradient-to-r from-red-800 to-yellow-500'>Please {text}</h1>
+                    </div> 
+                    }
+                    {error && <div className='mb-6 mt-[-10px] flex flex-row w-[75%] justify-center items-center ml-[40px] bg-red-200 sm:mb-6 sm:mt-[-10px] text-center text-red-800 font-bold'>
+                       {error} 
+                    </div> 
+                    }
+                    <h1 className='font-bold text-center mt-[-20px] mb-[15px] headingforLedg text-transparent bg-clip-text bg-gradient-to-r from-red-800 to-yellow-500'>Please {text}</h1>
                     <div className="grid grid-cols-1 gap-5">
                         <div className="relative">
                             <input value={AccountName} type="text" onChange={handleChangeInput('AccountName')} className="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " /> 

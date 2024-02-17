@@ -9,12 +9,14 @@ export const handleResponse = response => {
     if (response.status === 401) {
         signout(() => {
             router.push({
-                pathname: '/signin',
+                pathname: '/',
                 query: {
                     message: 'Your session is expired. Please signin'
                 }
             });
         });
+    } else {
+        return null;
     }
 };
 

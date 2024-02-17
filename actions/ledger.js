@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+import { handleResponse } from './auth';
 
 export const createLedger = (ledger, token) => {
     return fetch(`${process.env.DOMAIN}/create-new-ledger`, {
@@ -11,6 +12,7 @@ export const createLedger = (ledger, token) => {
         body : JSON.stringify(ledger)
     })
         .then(response => {
+            // handleResponse(response);
             return response.json();
         })
         .catch(err => console.log(err));
@@ -41,6 +43,7 @@ export const updateLedgerBalance = (ledger, token) => {
         body : JSON.stringify(ledger)
     })
         .then(response => {
+            // handleResponse(response);
             return response.json();
         })
         .catch(err => console.log(err));

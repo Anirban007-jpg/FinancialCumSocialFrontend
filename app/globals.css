@@ -108,7 +108,7 @@
 
 
 body {
-  overflow: scroll;
+  overflow: hidden;
   scroll-behaviour: smooth;
 }
 
@@ -248,6 +248,20 @@ body {
 }
 
 
+.inner {
+  max-width: 100%;
+  background: #F4FDE4;
+  border: 10px solid #0d99d7;
+  height: 100vh;
+  overflow: scroll;
+  padding: 77px 99px 87px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); 
+}
+
 
 @keyframes animate{
   0%
@@ -279,4 +293,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+
+.inputBox:valid~span, .inputBox:focus~span{
+  @apply text-purple-950 transform translate-x-[20px] translate-y-[-10px] text-[13px]
 }
