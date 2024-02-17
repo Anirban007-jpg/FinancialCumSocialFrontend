@@ -60,8 +60,8 @@ const MenuOptionswithoutHeading = [
             icon :  <SiHyperledger size={15} />  
           },
           {
-            path: "/Company/Ledgers",
-            title: "DIsplay Ledger Details",
+            path: "/Company/Ledgers/Ledger_Details",
+            title: "Display Ledger Details",
             icon :  <SiHyperledger size={15} />  
           }
         ]
