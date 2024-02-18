@@ -42,12 +42,12 @@ const JournalForm = () => {
   }, [])
 
   const handleChange = (name) => e => {
-   setValues({...values, error: '', [name]: e.target.value})
+   setValues({...values, error: '', success:'', [name]: e.target.value})
   }
 
   const handleFormsubmitData = (e) => {
     e.preventDefault();
-    setValues({...values, loading: true, error:''});
+    setValues({...values, error:''});
     const journal = {Transaction_Date,Financial_Year,Assessment_Year,Debit_item_Account,Credit_item_Account,Discount_Allowed,Discount_Received,company_name,Narration,Debit_Currency_Type,Credit_Currency_Type,Debit_item_Balance,Credit_item_Balance}
     const token = getCookie("token");
     createJournalentries(journal,token).then(data => {
@@ -78,11 +78,11 @@ const JournalForm = () => {
     return ( 
          <div className="inner sm:w-[75%] w-[75%] sm:mt[-150px] mt-[-150px] animate-customSlideIn">
             <form noValidate onSubmit={handleFormsubmitData}>
-                    {success && <div className='mb-6 mt-[-10px] flex flex-row w-[75%] justify-center items-center ml-[40px] bg-green-200 sm:mb-6 sm:mt-[-10px] text-center text-green-800 font-bold'>
+                    {success && <div className='mb-6 mt-[-10px] flex flex-row w-[90%] justify-center items-center ml-[40px] bg-green-200 sm:mb-6 sm:mt-[-10px] text-center text-green-800 font-bold'>
                        {success} 
                     </div> 
                     }
-                    {error && <div className='mb-6 mt-[-10px] flex flex-row w-[75%] justify-center items-center ml-[40px] bg-red-200 sm:mb-6 sm:mt-[-10px] text-center text-red-800 font-bold'>
+                    {error && <div className='mb-6 mt-[-10px] flex flex-row w-[90%] justify-center items-center ml-[40px] bg-red-200 sm:mb-6 sm:mt-[-10px] text-center text-red-800 font-bold'>
                        {error} 
                     </div> 
                     }
