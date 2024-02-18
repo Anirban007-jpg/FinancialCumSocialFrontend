@@ -37,10 +37,10 @@ const JournalForm = () => {
   
   useEffect(() => {
     initAccountNames();
+    values.company_name = isAuth().Company_Name;
+    
   }, [])
 
-  values.company_name = isAuth().Company_Name;
-    
   const handleChange = (name) => e => {
    setValues({...values, error: '', [name]: e.target.value})
   }

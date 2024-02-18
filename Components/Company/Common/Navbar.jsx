@@ -49,8 +49,8 @@ const Navbar = () => {
                     open && 
                     <div className='bg-gray-300 border h-[120px] w-[150px] absolute bottom-[-130px] z-20 right-0 pt-[15px] pl-[15px] space-y-[10px]'>
                         <p className='cursor-pointer hover:text-[blue] font-semibold' onClick={() => signout(() => router.push('/'))}>Logout</p>
-                        <p className='cursor-pointer hover:text-[blue] font-semibold'>Logout</p>
-                        <p className='cursor-pointer hover:text-[blue] font-semibold'>Logout</p>
+                        <p className='cursor-pointer hover:text-[blue] font-semibold'>Design</p>
+                        <p className='cursor-pointer hover:text-[blue] font-semibold'>Old</p>
                     </div>
                 }
             </div>
