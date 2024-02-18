@@ -27,11 +27,13 @@ const JournalForm = () => {
     Credit_Currency_Type : '',
     Debit_item_Balance : '',
     Credit_item_Balance : '',
+    Discount_Received: '',
+    Discount_Allowed: '',
     error : '',
     success: ''
   })
 
-  const {Transaction_Date,Financial_Year,Assessment_Year,Debit_item_Account,Credit_item_Account,company_name,Narration,Debit_Currency_Type,success,error,Credit_Currency_Type,Debit_item_Balance,Credit_item_Balance} = values;
+  const {Transaction_Date,Discount_Allowed,Discount_Received,Financial_Year,Assessment_Year,Debit_item_Account,Credit_item_Account,company_name,Narration,Debit_Currency_Type,success,error,Credit_Currency_Type,Debit_item_Balance,Credit_item_Balance} = values;
   
   useEffect(() => {
     initAccountNames();
@@ -46,7 +48,7 @@ const JournalForm = () => {
   const handleFormsubmitData = (e) => {
     e.preventDefault();
     setValues({...values, loading: true, error:''});
-    const journal = {Transaction_Date,Financial_Year,Assessment_Year,Debit_item_Account,Credit_item_Account,company_name,Narration,Debit_Currency_Type,Credit_Currency_Type,Debit_item_Balance,Credit_item_Balance}
+    const journal = {Transaction_Date,Financial_Year,Assessment_Year,Debit_item_Account,Credit_item_Account,Discount_Allowed,Discount_Received,company_name,Narration,Debit_Currency_Type,Credit_Currency_Type,Debit_item_Balance,Credit_item_Balance}
     const token = getCookie("token");
     createJournalentries(journal,token).then(data => {
             if (data.error){
@@ -121,7 +123,12 @@ const JournalForm = () => {
                             </select>
                     </div>
                 </div>
-                
+                {Debit_item_Account == "Purchases" && <div className="grid grid-cols-1 mt-[20px]">
+                    <div class="relative bg-gray-300 rounded-lg">
+                        <input value={Discount_Received} onChange={handleChange("Discount_Received")} type="text" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:border-soild focus:border-[2px] focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                        <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-300 dark:bg-gray-300 px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-800 peer-placeholder-shown:scale-100 peer-focus:font-bold peer-placeholder-shown:-translate-y-1/2 peer-focus:rounded-lg peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-md start-1">Discount Received %</label>
+                    </div>
+                </div>}
                 <div className="grid grid-cols-2 gap-5 mt-[20px]">
                     <div class="relative bg-gray-300 rounded-lg">
                         <input value={Debit_Currency_Type} onChange={handleChange("Debit_Currency_Type")} type="text" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:border-soild focus:border-[2px] focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
@@ -142,6 +149,13 @@ const JournalForm = () => {
                             </select>
                     </div>
                 </div>
+                {Credit_item_Account == "Sales" && <div className="grid grid-cols-1 mt-[20px]">
+                    <div class="relative bg-gray-300 rounded-lg">
+                        <input value={Discount_Allowed} onChange={handleChange("Discount_Allowed")} type="text" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:border-soild focus:border-[2px] focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                        <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-300 dark:bg-gray-300 px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-800 peer-placeholder-shown:scale-100 peer-focus:font-bold peer-placeholder-shown:-translate-y-1/2 peer-focus:rounded-lg peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-md start-1">Discount Allowed %</label>
+                    </div>
+                </div>}
+               
                 <div className="grid grid-cols-2 gap-5 mt-[20px]">
                     <div class="relative bg-gray-300 rounded-lg">
                         <input value={Credit_Currency_Type} onChange={handleChange("Credit_Currency_Type")} type="text" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:border-soild focus:border-[2px] focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
