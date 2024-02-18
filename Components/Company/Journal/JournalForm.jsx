@@ -90,7 +90,7 @@ const JournalForm = () => {
                 <h3 className='uppercase font-3xl underline text-center mt-[-10px] mb-[12px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-800 to-pink-800'>{text} FORM</h3>
                 <p className='text-center mb-[55px] font-semibold leading-2 underline'>Please Enter journal details</p>
                 <div className="grid grid-cols-1 mt-[-25px]">
-                    <div class="relative bg-gray-300 rounded-lg">
+                    <div className="relative bg-gray-300 rounded-lg">
                         <input value={Transaction_Date} onChange={handleChange("Transaction_Date")} type="text" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:border-soild focus:border-[2px] focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                         <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-300 dark:bg-gray-300 px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-800 peer-placeholder-shown:scale-100 peer-focus:font-bold peer-placeholder-shown:-translate-y-1/2 peer-focus:rounded-lg peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-md start-1">Transaction Date : DD/MM/YYYY</label>
                     </div>
@@ -124,17 +124,17 @@ const JournalForm = () => {
                     </div>
                 </div>
                 {Debit_item_Account == "Purchases" && <div className="grid grid-cols-1 mt-[20px]">
-                    <div class="relative bg-gray-300 rounded-lg">
+                    <div className="relative bg-gray-300 rounded-lg">
                         <input value={Discount_Received} onChange={handleChange("Discount_Received")} type="text" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:border-soild focus:border-[2px] focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                         <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-300 dark:bg-gray-300 px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-800 peer-placeholder-shown:scale-100 peer-focus:font-bold peer-placeholder-shown:-translate-y-1/2 peer-focus:rounded-lg peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-md start-1">Discount Received %</label>
                     </div>
                 </div>}
                 <div className="grid grid-cols-2 gap-5 mt-[20px]">
-                    <div class="relative bg-gray-300 rounded-lg">
+                    <div className="relative bg-gray-300 rounded-lg">
                         <input value={Debit_Currency_Type} onChange={handleChange("Debit_Currency_Type")} type="text" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:border-soild focus:border-[2px] focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                         <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-300 dark:bg-gray-300 px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-800 peer-placeholder-shown:scale-100 peer-focus:font-bold peer-placeholder-shown:-translate-y-1/2 peer-focus:rounded-lg peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-md start-1">Debit Amount Currency</label>
                     </div>
-                    <div class="relative bg-gray-300 rounded-lg">
+                    <div className="relative bg-gray-300 rounded-lg">
                         <input value={Debit_item_Balance} onChange={handleChange("Debit_item_Balance")} type="text" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:border-soild focus:border-[2px] focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                         <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-300 dark:bg-gray-300 px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-800 peer-placeholder-shown:scale-100 peer-focus:font-bold peer-placeholder-shown:-translate-y-1/2 peer-focus:rounded-lg peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-md start-1">Debit Amount</label>
                     </div>
@@ -150,30 +150,30 @@ const JournalForm = () => {
                     </div>
                 </div>
                 {Credit_item_Account == "Sales" && <div className="grid grid-cols-1 mt-[20px]">
-                    <div class="relative bg-gray-300 rounded-lg">
+                    <div className="relative bg-gray-300 rounded-lg">
                         <input value={Discount_Allowed} onChange={handleChange("Discount_Allowed")} type="text" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:border-soild focus:border-[2px] focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                         <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-300 dark:bg-gray-300 px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-800 peer-placeholder-shown:scale-100 peer-focus:font-bold peer-placeholder-shown:-translate-y-1/2 peer-focus:rounded-lg peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-md start-1">Discount Allowed %</label>
                     </div>
                 </div>}
                
                 <div className="grid grid-cols-2 gap-5 mt-[20px]">
-                    <div class="relative bg-gray-300 rounded-lg">
+                    <div className="relative bg-gray-300 rounded-lg">
                         <input value={Credit_Currency_Type} onChange={handleChange("Credit_Currency_Type")} type="text" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:border-soild focus:border-[2px] focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                         <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-300 dark:bg-gray-300 px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-800 peer-placeholder-shown:scale-100 peer-focus:font-bold peer-placeholder-shown:-translate-y-1/2 peer-focus:rounded-lg peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-md start-1">Credit Amount Currency</label>
                     </div>
-                    <div class="relative bg-gray-300 rounded-lg">
+                    <div className="relative bg-gray-300 rounded-lg">
                         <input value={Credit_item_Balance} onChange={handleChange("Credit_item_Balance")} type="text" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:border-soild focus:border-[2px] focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                         <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-300 dark:bg-gray-300 px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-800 peer-placeholder-shown:scale-100 peer-focus:font-bold peer-placeholder-shown:-translate-y-1/2 peer-focus:rounded-lg peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-md start-1">Credit Amount</label>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 mt-[20px]">
-                    <div class="relative bg-gray-300 rounded-lg">
+                    <div className="relative bg-gray-300 rounded-lg">
                         <input value={values.company_name} type="text" disabled className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:border-soild focus:border-[2px] focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                         <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-300 dark:bg-gray-300 px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-800 peer-placeholder-shown:scale-100 peer-focus:font-bold peer-placeholder-shown:-translate-y-1/2 peer-focus:rounded-lg peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-md start-1">Credit Amount</label>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 mt-[10px]">
-                    <div class="relative bg-gray-300 rounded-lg">
+                    <div className="relative bg-gray-300 rounded-lg">
                         <textarea value={Narration} onChange={handleChange("Narration")} row="2" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:border-soild focus:border-[2px] focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                         <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-300 dark:bg-gray-300 px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-800 peer-placeholder-shown:scale-100 peer-focus:font-bold peer-placeholder-shown:-translate-y-1/2 peer-focus:rounded-lg peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-md start-1">Narration</label>
                     </div>
